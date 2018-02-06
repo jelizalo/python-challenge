@@ -11,16 +11,15 @@ sent_length = 0
 
 # find the number of words, sentences, letters, and sentence length
 for wordcount in txtpath1.read().split(" "):
-		#find number of words
-		words +=1
-		#find number of sentences
-		sentences += wordcount.count(".")
-		#find Total letter count in order to find average letter count
-		letters += sum(len(words) for words in wordcount)
-		#find average letter count (divide total letter count by number of words)
-		avg_letter = letters/words
-		# find average sentence length (divide total words by number of sentences)
-		# giving me ZeroDivisionError
+	#find number of words
+	words +=1
+	#find number of sentences
+	sentences += wordcount.count(".")
+	#find Total letter count in order to find average letter count
+	letters += sum(len(words) for words in wordcount)
+	#find average letter count (divide total letter count by number of words)
+	avg_letter = letters/words
+# find average sentence length (divide total words by number of sentences)
 sent_length = words/sentences
 
 
@@ -34,6 +33,7 @@ print("Average Sentence Length: " + str(sent_length))
 
 #print("Total Letter Count: " + str(letters)) #use as test
 
+#Output to txt file "Output.txt"
 text_file = open("Output.txt", "w")
 text_file.write("Paragraph Analysis")
 text_file.write("\n---------------------")
