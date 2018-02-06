@@ -15,30 +15,44 @@ with open (csvpath1, 'r', newline='') as csvfile:
 		votes = votes + 1
 
 		#Create a dictionary of the candiate with the number of vote
-		if row[2] not in candidate.keys():
+		if row[2] not in candidates.keys():
 			num_of_elections = 0
 			candidates.update({row[2]:num_of_elections})
 		if row[2] in candidates.keys():
 			candidates[row[2]] +=1
 		#store each candidate's election number
-			for candidate, vote in elections.items():
-		print(candidate + ":" + vote ) 
-	#print(candidates)
+	
+	#defining more variables
+	candidate_results = []
+	winner = ''
+	winner_total = 0
 
- 
+	for name, total in candidates.items():
+		percent = (total/votes)*100
+		candidate_results.append("{}: {}% ({})".format(name, str(percent), str(total)))
+		if total > winner_total:
+			winner_total = total
+			winner = name
 
-    
-   # candidate = {}
-    #number_of_election = 0
-    #for row in csvreader: 
-      #  if row[2] not in candidate.keys():
-       #     candidate.update({row[2]: number_of_election})
-        #if row[2] in candidate.keys(): 
-        #	candidate[row[2]] += 1
-    #print(candidate)
+print("Election Results")
+print("---------------------------")
+print("Total Votes: " + str(votes))
+print("---------------------------")
+for line in candidate_results:
+	print(line)
+print("---------------------------")
+print("Winner: " + winner)
 
-#print("Election Results")
-#print("---------------------------")
-#print("Total Votes: " + str(votes))
-#print("---------------------------")
-#print(str{candidate})
+
+#Output to txt file "Output.txt"
+text_file = open("Output.txt", "w")
+text_file.write("Election Results")
+text_file.write("\n---------------------")
+text_file.write("\nTotal Votes: " + str(votes))
+text_file.write("\n---------------------------")
+text_file.write("\n" + line)
+print("---------------------------")
+text_file.write("\nWinner: " + winner)
+
+text_file.close()
+

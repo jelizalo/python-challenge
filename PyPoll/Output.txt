@@ -1,0 +1,6 @@
+Election Results
+---------------------
+Total Votes: 803000
+---------------------------
+Cordin: 3.0% (24090)
+Winner: Vestal
