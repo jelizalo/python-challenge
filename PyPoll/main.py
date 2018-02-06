@@ -34,6 +34,7 @@ with open (csvpath1, 'r', newline='') as csvfile:
 			winner_total = total
 			winner = name
 
+#print on command prompt
 print("Election Results")
 print("---------------------------")
 print("Total Votes: " + str(votes))
@@ -50,7 +51,9 @@ text_file.write("Election Results")
 text_file.write("\n---------------------")
 text_file.write("\nTotal Votes: " + str(votes))
 text_file.write("\n---------------------------")
-print("---------------------------")
+for line in candidate_results:
+	text_file.write("\n" + line)
+text_file.write("\n---------------------------")
 text_file.write("\nWinner: " + winner)
 
 text_file.close()
