@@ -50,7 +50,6 @@ text_file.write("Election Results")
 text_file.write("\n---------------------")
 text_file.write("\nTotal Votes: " + str(votes))
 text_file.write("\n---------------------------")
-text_file.write("\n" + line)
 print("---------------------------")
 text_file.write("\nWinner: " + winner)
 
