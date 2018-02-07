@@ -29,7 +29,7 @@ with open (csvpath1, 'r', newline='') as csvfile:
 
 	# finding the information for each candidates
 	for name, total in candidates.items():
-		# finding the percentage of each cnadidate
+		# finding the percentage of each candidate
 		percent = (total/votes)*100
 		candidate_results.append("{}: {}% ({})".format(name, str(percent), str(total)))
 		# finding the winner (the candidate with the most votes)
